@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'M SORRY DUDU 🥹</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
+
+        :root {
+            --duration: 10s;
+            --size: 80vw;
+            --characters: 14;
+            --font-size: 22px;
+            --delay-character: 0.2s;
+            --text-color-hover: #ff8489;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Set page background color to #c6af9e and removed background image */
+            background-color: #c6af9e;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .frame {
+            width: var(--size);
+            height: var(--size);
+            max-width: 400px;
+            max-height: 400px;
+            margin: 0 auto;
+            border: 2px #fbfbfb solid;
+            position: relative;
+            box-shadow: inset 0 0 0 20px white;
+            /* Added background-color fallback */
+            background-color: #ddd;
+            background: url('https://cdn.discordapp.com/attachments/852204942152564837/1449870313650126941/Image_1.jpg?ex=69407874&is=693f26f4&hm=3da7be34e1e45e165397dd2b5a7affad7bb192398105b68e99aebc9145ea5e55') no-repeat center;
+            background-size: cover;
+            transition: ease all 0.3s;
+        }
+
+        /* Unnested hover styles */
+        .frame:hover {
+            box-shadow: inset 0 0 0 0 white;
+            border: 2px #f9f9f9 solid;
+            cursor: pointer;
+        }
+
+        .frame:hover .text {
+            mix-blend-mode: difference;
+        }
+
+        .frame:hover .text span {
+            color: var(--text-color-hover);
+        }
+
+        .text {
+            /* Fix calculation syntax for CSS */
+            transform: translate(
+                calc((var(--font-size) * -1) / 2),
+                calc((var(--font-size) * -1) / 2)
+            );
+            position: relative;
+            height: 100%;
+            transition: ease all 0.3s;
+            pointer-events: none; /* Let clicks pass through to frame */
+        }
+
+        .frame span {
+            font-size: var(--font-size);
+            display: inline-block;
+            text-align: center;
+            width: var(--font-size);
+            height: var(--font-size);
+            line-height: var(--font-size);
+            animation: frameMove var(--duration) linear infinite;
+            position: absolute;
+            transition: ease all 0.3s;
+            color: #333;
+            font-weight: 600;
+        }
+
+        @keyframes frameMove {
+            0% {
+                top: 0;
+                left: 0;
+                transform: rotate(0deg);
+            }
+            24% {
+                top: 0;
+                left: 100%;
+                transform: rotate(0deg);
+            }
+            25% {
+                top: 0;
+                left: 100%;
+                transform: rotate(90deg);
+            }
+            49% {
+                top: 100%;
+                left: 100%;
+                transform: rotate(90deg);
+            }
+            50% {
+                top: 100%;
+                left: 100%;
+                transform: rotate(180deg);
+            }
+            74% {
+                top: 100%;
+                left: 0%;
+                transform: rotate(180deg);
+            }
+            75% {
+                top: 100%;
+                left: 0%;
+                transform: rotate(270deg);
+            }
+            99% {
+                top: 0%;
+                left: 0%;
+                transform: rotate(270deg);
+            }
+            100% {
+                top: 0%;
+                left: 0%;
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Ensure heart color is consistent inside frame */
+        /* Updated calculation: 17 items per loop (16 chars + 1 space) */
+        /* 1st heart: 1 */
+        /* 2nd heart: 18 */
+        /* 3rd heart: 35 */
+        .frame span:nth-child(1), .frame span:nth-child(18), .frame span:nth-child(35) {
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <div class="text">
+            <!-- 1st Repetition: "I'M SORRY DUDU" reversed ("UDUD YRROS M'I") -->
+            <span>🥹</span>
+            <span></span>
+            <span>U</span>
+            <span>D</span>
+            <span>U</span>
+            <span>D</span>
+            <span></span>
+            <span>Y</span>
+            <span>R</span>
+            <span>R</span>
+            <span>O</span>
+            <span>S</span>
+            <span></span>
+            <span>M</span>
+            <span>'</span>
+            <span>I</span>
+            <span></span>
+
+            <!-- 2nd Repetition -->
+            <span>🥹</span>
+            <span></span>
+            <span>U</span>
+            <span>D</span>
+            <span>U</span>
+            <span>D</span>
+            <span></span>
+            <span>Y</span>
+            <span>R</span>
+            <span>R</span>
+            <span>O</span>
+            <span>S</span>
+            <span></span>
+            <span>M</span>
+            <span>'</span>
+            <span>I</span>
+            <span></span>
+
+            <!-- 3rd Repetition -->
+            <span>🥹</span>
+            <span></span>
+            <span>U</span>
+            <span>D</span>
+            <span>U</span>
+            <span>D</span>
+            <span></span>
+            <span>Y</span>
+            <span>R</span>
+            <span>R</span>
+            <span>O</span>
+            <span>S</span>
+            <span></span>
+            <span>M</span>
+            <span>'</span>
+            <span>I</span>
+        </div>
+    </div>
+
+    <script>
+        // Simulating the SCSS @for loop to apply animation delays
+        document.addEventListener('DOMContentLoaded', () => {
+            const spans = document.querySelectorAll('.frame .text span');
+            // CSS Variable value for calculation (0.2s)
+            // We use JS calculation here to be precise
+            const delayChar = 0.2; 
+            
+            spans.forEach((span, index) => {
+                // SCSS loop started at 1, so we use index + 1
+                const i = index + 1;
+                span.style.animationDelay = `${delayChar * i}s`;
+            });
+        });
+    </script>
+</body>
+</html>
